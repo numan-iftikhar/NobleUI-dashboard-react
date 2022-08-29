@@ -12,6 +12,7 @@ const LoginFrom = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
+  const [isPassMatch, setIsPassMatch] = useState(false);
 
   // * handlers
   const handleName = (event) => {
@@ -20,6 +21,7 @@ const LoginFrom = () => {
       ...values,
       name: event.target.value,
     }));
+    setSubmitted(false);
   };
 
   const handleNumber = (event) => {
@@ -28,6 +30,7 @@ const LoginFrom = () => {
       ...values,
       number: event.target.value,
     }));
+    setSubmitted(false);
   };
 
   const handleEmail = (event) => {
@@ -36,6 +39,7 @@ const LoginFrom = () => {
       ...values,
       email: event.target.value,
     }));
+    setSubmitted(false);
   };
 
   const handlePassword = (event) => {
@@ -44,6 +48,7 @@ const LoginFrom = () => {
       ...values,
       password: event.target.value,
     }));
+    setSubmitted(false);
   };
 
   const handleConfirmPassword = (event) => {
@@ -52,31 +57,36 @@ const LoginFrom = () => {
       ...values,
       confirmPassword: event.target.value,
     }));
+    setSubmitted(false);
   };
 
   const handleRegister = (e) => {
     e.preventDefault();
-    if (values.name && values.password && values.email) {
+    if (values.name && values.password && values.email && isPassMatch) {
       setValid(true);
+    }
+    if (values.password === values.confirmPassword) {
+      setIsPassMatch(true);
+      // setValid(true);
     }
     setSubmitted(true);
   };
 
-
-
-
   return (
     <>
-    {/* success alert */}
+      {/* success alert */}
       <div className="successAlert">
-        {submitted && valid && (
+        {isPassMatch && submitted && valid && (
           <div className="py-2 px-4 text-white rounded-lg absolute top-0 bg-green-600 success-message">
             Success! Thank you for registering
           </div>
         )}
       </div>
 
-    {/* login form */}
+      {/* pass not match alert */}
+      {submitted && !isPassMatch && alert("Password not match")}
+
+      {/* login form */}
       <form onSubmit={handleRegister}>
         <div>
           <input
