@@ -10,8 +10,12 @@ function App() {
 
   return (
     <div className="App">
+      <div className="flex">
+      <Sidebar />
+      <Navbar />
+      </div>
+      <BottomRightButtons />
       <Routes>
-        <Route path="/" element={<Sidebar />} />
         <Route path="login" element={<LoginFrom />} />
       </Routes>
     </div>
