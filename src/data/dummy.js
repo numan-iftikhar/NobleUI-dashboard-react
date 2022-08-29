@@ -4,7 +4,7 @@ export const links = [
       links: [
         {
           name: 'Dashboard',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
       ],
     },
@@ -13,15 +13,15 @@ export const links = [
       links: [
         {
           name: 'Email',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Chat',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Calendar',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
       ],
     },
@@ -31,27 +31,27 @@ export const links = [
       links: [
         {
           name: 'UI Kit',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Advanced UI',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Forms',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Charts',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Table',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Icons',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
       ],
     },
@@ -60,15 +60,15 @@ export const links = [
       links: [
         {
           name: 'Special pages',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Authentication',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
         {
           name: 'Error',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
       ],
     },
@@ -77,7 +77,7 @@ export const links = [
       links: [
         {
           name: 'Documentation',
-          icon: <FaCube />,
+          icon: "<FaCube />",
         },
       ],
     },
