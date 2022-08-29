@@ -1,7 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { FaCube } from "react-icons/fa";
-import { links } from "../data/dummy";
 import LinkItem from "./LinkItem";
 
 const Sidebar = () => {
@@ -12,7 +11,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar bg-slate-900 w-60 h-screen overflow-auto">
       {/* header */}
-      <div className="flex justify-between px-6 py-3 border-y border-gray-600">
+      <div className="flex justify-between px-6 py-3 border-y border-gray-600 sticky top-0 bg-slate-900">
         <p className="brandName font-bold text-2xl text-gray-100">
           Noble<span className="text-blue-700">UI</span>
         </p>
