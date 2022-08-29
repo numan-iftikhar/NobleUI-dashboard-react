@@ -1,14 +1,14 @@
 import React from "react";
 import { FaFileAlt } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
-import "./App.css";
+import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 
 function App() {
   const activeMenu = true;
 
   return (
-    <div className="App bg-slate-500">
+    <div className="App">
       {/* Bottom Corner Fixed Buttons */}
       <div className="flex fixed bottom-8 right-8 text-white">
         <button className="mr-2 bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">
@@ -20,15 +20,9 @@ function App() {
       </div>
 
       {/* Sidebar */}
-      {activeMenu ? (
-        <div className="sidebar dark:bg-secondary-dark-bg bg-white">
-          <Sidebar />
-        </div>
-      ) : (
-        <div className="w-0 dark:bg-secondary-dark-bg">
-          <Sidebar />
-        </div>
-      )}
+      {/* <Navbar /> */}
+        <Sidebar />
+      {/* navbar */}
     </div>
   );
 }
