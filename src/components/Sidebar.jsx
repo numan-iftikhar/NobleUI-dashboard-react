@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar absolute top-0 left-0 bg-slate-900 w-60 h-screen overflow-auto">
       {/* header */}
-      <div className="flex fixed justify-between w-full px-6 py-3 border-y border-gray-600">
+      <div className="flex justify-between px-6 py-3 border-y border-gray-600">
         <p className="brandName font-bold text-2xl text-gray-100">
           Noble<span className="text-blue-700">UI</span>
         </p>
@@ -22,7 +22,7 @@ const Sidebar = () => {
       </div>
 
       {/* Link items */}
-      <div className="mt-20 text-gray-400">
+      <div className="mt-10 text-gray-400">
         <div className="mb-4">
           <p className={headingStyle}>MAIN</p>
           <LinkItem title="Dashboard" icon={<FaCube />} />

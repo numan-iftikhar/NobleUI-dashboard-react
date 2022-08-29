@@ -11,9 +11,8 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="login" element={<LoginFrom />} />
         <Route path="/" element={<Sidebar />} />
-        <Route path="/" element={<BottomRightButtons />} />
+        <Route path="login" element={<LoginFrom />} />
       </Routes>
     </div>
   );
