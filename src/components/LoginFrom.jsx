@@ -4,23 +4,33 @@ import "./LoginForm.css";
 
 const LoginFrom = () => {
   const [values, setValues] = useState({
-    userName: "",
-    password: "",
+    name: "",
+    number: null,
     email: "",
+    password: null,
+    confirmPassword: null,
   });
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
 
   // * handlers
-  const handleUserNameInputChange = (event) => {
+  const handleName = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
-      userName: event.target.value,
+      name: event.target.value,
     }));
   };
 
-  const handleEmailInputChange = (event) => {
+  const handleNumber = (event) => {
+    event.persist();
+    setValues((values) => ({
+      ...values,
+      number: event.target.value,
+    }));
+  };
+
+  const handleEmail = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
@@ -28,7 +38,7 @@ const LoginFrom = () => {
     }));
   };
 
-  const handlePasswordInputChange = (event) => {
+  const handlePassword = (event) => {
     event.persist();
     setValues((values) => ({
       ...values,
@@ -36,39 +46,70 @@ const LoginFrom = () => {
     }));
   };
 
+  const handleConfirmPassword = (event) => {
+    event.persist();
+    setValues((values) => ({
+      ...values,
+      confirmPassword: event.target.value,
+    }));
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
-    if (values.userName && values.password && values.email) {
+    if (values.name && values.password && values.email) {
       setValid(true);
     }
     setSubmitted(true);
   };
 
+
+
+
   return (
     <>
+    {/* success alert */}
       <div className="successAlert">
         {submitted && valid && (
-          <div className="py-2 px-4 text-white rounded-lg absolute top-0 bg-green-500 success-message">
+          <div className="py-2 px-4 text-white rounded-lg absolute top-0 bg-green-600 success-message">
             Success! Thank you for registering
           </div>
         )}
       </div>
 
+    {/* login form */}
       <form onSubmit={handleRegister}>
         <div>
           <input
-            id="user-name"
-            className="form-field rounded-lg focus:outline-blue-500"
+            id="name"
+            className="form-field rounded-lg outline-none"
             type="text"
-            placeholder="username"
-            name="userName"
-            value={values.userName}
+            placeholder="Name"
+            name="name"
+            value={values.name}
             required
-            onChange={handleUserNameInputChange}
+            onChange={handleName}
           />
           <div className="w-auto h-4">
-            {submitted && !values.userName && (
-              <span id="email-error">Please enter a username</span>
+            {submitted && !values.name && (
+              <span id="email-error">Please enter a name</span>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <input
+            id="number"
+            className="form-field rounded-lg outline-none"
+            type="tel"
+            placeholder="Number"
+            name="number"
+            value={values.number}
+            required
+            onChange={handleNumber}
+          />
+          <div className="w-auto h-4">
+            {submitted && !values.name && (
+              <span id="email-error">Please enter a name</span>
             )}
           </div>
         </div>
@@ -76,13 +117,13 @@ const LoginFrom = () => {
         <div>
           <input
             id="email"
-            className="form-field rounded-lg focus:outline-blue-500"
+            className="form-field rounded-lg outline-none"
             type="text"
-            placeholder="email"
+            placeholder="Email"
             name="email"
             value={values.email}
             required
-            onChange={handleEmailInputChange}
+            onChange={handleEmail}
           />
           <div className="w-auto h-4">
             {submitted && !values.email && (
@@ -94,13 +135,31 @@ const LoginFrom = () => {
         <div>
           <input
             id="password"
-            className="form-field rounded-lg focus:outline-blue-500"
+            className="form-field rounded-lg outline-none"
             type="password"
-            placeholder="password"
+            placeholder="Password"
             name="password"
             value={values.password}
             required
-            onChange={handlePasswordInputChange}
+            onChange={handlePassword}
+          />
+          <div className="w-auto h-4">
+            {submitted && !values.password && (
+              <span id="email-error">Please enter a password</span>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <input
+            id="password"
+            className="form-field rounded-lg outline-none"
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPassword"
+            value={values.confirmPassword}
+            required
+            onChange={handleConfirmPassword}
           />
           <div className="w-auto h-4">
             {submitted && !values.password && (
@@ -110,7 +169,7 @@ const LoginFrom = () => {
         </div>
 
         <button
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 my-2 rounded-lg focus:outline-none"
+          className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 my-2 rounded-lg focus:outline-none"
           type="submit"
         >
           Register
