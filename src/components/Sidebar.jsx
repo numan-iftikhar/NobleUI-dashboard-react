@@ -10,7 +10,7 @@ const Sidebar = () => {
   const activeMenu = true;
 
   return (
-    <div className="sidebar bg-slate-900 w-60 h-screen overflow-auto">
+    <div className="sidebar absolute top-0 left-0 bg-slate-900 w-60 h-screen overflow-auto">
       {/* header */}
       <div className="flex fixed justify-between w-full px-6 py-3 border-y border-gray-600">
         <p className="brandName font-bold text-2xl text-gray-100">

@@ -1,7 +1,7 @@
 import React from "react";
-
+import { Routes, Route, Link } from "react-router-dom";
 import BottomRightButtons from "./components/BottomRightButtons";
-import LoginFrom from "./components/LoginFrom";
+import LoginFrom from "./pages/login-form/LoginForm";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 
@@ -10,15 +10,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* Bottom Corner Fixed Buttons */}
-      {!(<LoginFrom />) && <BottomRightButtons />}
-
-      {/* Sidebar */}
-      {/* <Navbar /> */}
-        {/* <Sidebar /> */}
-      {/* navbar */}
-      {/* login page */}
-      <LoginFrom />
+      <Routes>
+        <Route path="login" element={<LoginFrom />} />
+        <Route path="/" element={<Sidebar />} />
+        <Route path="/" element={<BottomRightButtons />} />
+      </Routes>
     </div>
   );
 }
