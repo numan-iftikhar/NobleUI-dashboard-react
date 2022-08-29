@@ -73,7 +73,7 @@ const LoginFrom = () => {
   };
 
   return (
-    <>
+    <div className="LoginForm">
       {/* success alert */}
       <div className="successAlert">
         {isPassMatch && submitted && valid && (
@@ -185,7 +185,7 @@ const LoginFrom = () => {
           Register
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
