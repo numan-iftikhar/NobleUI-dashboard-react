@@ -9,9 +9,9 @@ const Sidebar = () => {
   const activeMenu = true;
 
   return (
-    <div className="sidebar bg-slate-900 w-60 h-screen overflow-auto">
+    <div className="sidebar bg-slate-900 h-screen overflow-clip">
       {/* header */}
-      <div className="flex justify-between px-6 py-3 border-y border-gray-600 sticky top-0 bg-slate-900">
+      <div className="flex sticky top-0 justify-between px-6 py-3 border-y border-gray-600  bg-slate-900">
         <p className="brandName font-bold text-2xl text-gray-100">
           Noble<span className="text-blue-700">UI</span>
         </p>
