@@ -9,16 +9,16 @@ function App() {
   const activeMenu = true;
 
   return (
-    <div className="App bg-slate-50">
-      <div className="grid grid-cols-5 grid-rows-2">
-        <div className="row-span-2 col-span-1">
+    <div className="App bg-slate-50 grid grid-cols-12">
+      {/* <div className=""> */}
+        <div className="md:col-span-2">
           <Sidebar />
         </div>
-        <div className="">
+        <div className="md:col-span-10">
           <Navbar />
         </div>
         
-      </div>
+      {/* </div> */}
       <BottomRightButtons />
       <Routes>
         <Route path="login" element={<LoginFrom />} />
