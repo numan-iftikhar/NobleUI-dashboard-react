@@ -9,10 +9,12 @@ function App() {
   const activeMenu = true;
 
   return (
-    <div className="App">
-      <div className="flex">
-      <Sidebar />
-      <Navbar />
+    <div className="App bg-slate-50">
+      <div className="grid grid-cols-5 grid-rows-2">
+      <div className="row-span-2"><Sidebar /></div>
+      <div className="">
+        <Navbar />
+      </div>
       </div>
       <BottomRightButtons />
       <Routes>
