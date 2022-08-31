@@ -1,5 +1,4 @@
 import React from 'react'
-import { links } from "../data/dummy";
 const LinkItem = ({title, icon}) => {
   return (
     <div>
