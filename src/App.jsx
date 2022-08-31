@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Stats from "./components/Stats";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
+import ButtonGroup from "./components/ButtonGroup";
 
 function App() {
   const data = {
@@ -63,10 +64,19 @@ function App() {
         </div>
 
         <div className="fullScreenLineChart bg-white m-6 shadow-md p-6">
-          <h3 className="font-semibold text-md mb-4">REVENUE</h3>
-          <p className="text-sm text-gray-500 w-2/3">
-            Revenue is the income that a business has from its normal business activities, usually from the sale of goods and services to customers.
-          </p>
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="font-semibold text-md mb-4">REVENUE</h3>
+              <p className="text-sm text-gray-500 w-2/3">
+                Revenue is the income that a business has from its normal
+                business activities, usually from the sale of goods and services
+                to customers.
+              </p>
+            </div>
+              <div>
+                <ButtonGroup />
+              </div>
+          </div>
           <Line
             data={data}
             options={{
