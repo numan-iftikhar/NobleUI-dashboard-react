@@ -1,26 +1,37 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
-import { Bar } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 
 const Stats = ({ title, value, pnValue, chart }) => {
   const state = {
-    labels: ["January", "February", "March", "April", "May"],
+    labels: [
+      "January",
+      "February",
+      "March",
+      "January",
+      "February",
+      "March",
+      "January",
+      "February",
+      "March",
+      "April",
+    ],
     datasets: [
       {
-        label: "Rainfall",
+        label: "stats",
         fill: false,
-        lineTension: 0.5,
-        backgroundColor: "rgba(75,192,192,1)",
-        borderColor: "rgba(0,0,0,1)",
+        lineTension: .5,
+        backgroundColor: "rgba(72,113,247,1)",
+        borderColor: "rgba(72,113,247,1)",
         borderWidth: 2,
-        data: [65, 59, 80, 81, 56],
+        data: [65, 59, 80, 65, 59, 80, 65, 59, 80, 81],
       },
     ],
   };
 
   return (
     <div className="line p-6 flex flex-col text-center items-center gap-5 justify-between bg-white w-full shadow-md">
+      {/* left side */}
       <div className="left">
         <h4 className="uppercase font-semibold text-sm text-gray-600">
           {title}
@@ -30,6 +41,8 @@ const Stats = ({ title, value, pnValue, chart }) => {
           {pnValue}%
         </p>
       </div>
+
+      {/* right side */}
       <div className="right w-full">
         <Line
           data={state}
