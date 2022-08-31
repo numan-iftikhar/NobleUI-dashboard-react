@@ -1,4 +1,5 @@
-export const links = [
+export default dummy;
+const links = [
     {
       title: 'MAIN',
       links: [
