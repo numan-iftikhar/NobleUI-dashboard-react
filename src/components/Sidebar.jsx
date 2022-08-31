@@ -5,11 +5,10 @@ import LinkItem from "./LinkItem";
 
 const Sidebar = () => {
   const sb__headingStyle =
-    "flex items-center gap-4 mb-1 px-6 text-xs text-white font-semibold";
-  const activeMenu = true;
+    "gap-4 mb-1 px-6 text-xs text-white font-semibold";
 
   return (
-    <div className="sidebar bg-slate-900 h-screen md:overflow-hidden md:hover:overflow-auto pb-10">
+    <div className="sidebar fixed w-60 top-0 left-0 overflow-x-hidden bg-slate-900 h-full pb-10">
       {/* header */}
       <div className="flex sticky top-0 justify-between px-6 py-3 border-y border-gray-600  bg-slate-900">
         <p className="brandName font-bold text-2xl text-gray-100">
